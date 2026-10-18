@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080b18">
   <title>Quiet Sky — Constellation Maker</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=frozen-3">
 </head>
 <body>
   <div class="app-shell">
@@ -24,6 +24,7 @@
         <div class="sky-wrap" id="skyWrap">
           <canvas id="sky" aria-label="Star field. Click stars to connect them."></canvas>
           <div class="sky-hint" id="skyHint"><span class="hint-icon">✦</span><span>Choose a star, then another.<br><b>See what the sky becomes.</b></span></div>
+          <div class="stardust-layer" id="stardustLayer" aria-hidden="true"></div>
           <div class="sky-coordinates" aria-hidden="true">N 41° 24′ &nbsp;·&nbsp; E 02° 10′</div>
           <div class="sky-tools" aria-label="Sky controls">
             <button id="undoBtn" class="icon-button" title="Undo last line" aria-label="Undo last line">↶</button>
@@ -56,6 +57,6 @@
     </main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js?v=frozen-3"></script>
 </body>
 </html>
