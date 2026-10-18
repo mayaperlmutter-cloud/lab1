@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b18">
+  <title>Quiet Sky — Constellation Maker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Quiet Sky home"><span class="brand-mark">✳</span><span>QUIET SKY</span></a>
+      <div class="top-note"><span class="live-dot"></span> A little universe, all your own</div>
+      <button id="saveBtn" class="button button-small" type="button"><span>＋</span> Save constellation</button>
+    </header>
+
+    <main class="workspace">
+      <section class="sky-panel" aria-label="Interactive night sky">
+        <div class="sky-heading">
+          <div><p class="eyebrow">YOUR PRIVATE UNIVERSE</p><h1>Find a shape<br>in the <em>quiet.</em></h1></div>
+          <div class="sky-counter"><strong id="starCount">0</strong><span>stars connected</span></div>
+        </div>
+        <div class="sky-wrap" id="skyWrap">
+          <canvas id="sky" aria-label="Star field. Click stars to connect them."></canvas>
+          <div class="sky-hint" id="skyHint"><span class="hint-icon">✦</span><span>Choose a star, then another.<br><b>See what the sky becomes.</b></span></div>
+          <div class="sky-coordinates" aria-hidden="true">N 41° 24′ &nbsp;·&nbsp; E 02° 10′</div>
+          <div class="sky-tools" aria-label="Sky controls">
+            <button id="undoBtn" class="icon-button" title="Undo last line" aria-label="Undo last line">↶</button>
+            <button id="clearBtn" class="icon-button" title="Clear lines" aria-label="Clear lines">⌫</button>
+            <span class="tool-divider"></span>
+            <button id="sparkleBtn" class="icon-button" title="New star field" aria-label="New star field">⟳</button>
+          </div>
+        </div>
+        <div class="sky-footer"><span><i class="legend-star"></i> tap a star to begin drawing</span><span id="skyStatus">THE SKY IS YOURS</span></div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="creation-card">
+          <div class="section-top"><span class="step-number">01</span><span class="eyebrow">MAKE YOUR MARK</span></div>
+          <label class="field-label" for="nameInput">Name your constellation</label>
+          <div class="name-field"><input id="nameInput" maxlength="28" placeholder="e.g. The Paper Swan" autocomplete="off"><span>✧</span></div>
+          <p class="field-note">A name is the beginning of a story.</p>
+
+          <div class="section-top myth-top"><span class="step-number">02</span><span class="eyebrow">GIVE IT A STORY</span><button id="mythBtn" class="text-button" type="button">✦ Surprise me</button></div>
+          <div class="myth-card" id="mythCard"><span class="quote-mark">“</span><p id="mythText">Every pattern in the dark is waiting for someone to tell its story.</p><span class="myth-credit" id="mythCredit">A story will appear here</span></div>
+          <button id="newMythBtn" class="button button-outline" type="button">Generate a little myth <span>↗</span></button>
+        </section>
+
+        <section class="saved-section">
+          <div class="saved-heading"><div><p class="eyebrow">KEPT CLOSE</p><h2>Your sky notes <span id="savedCount">0</span></h2></div><button id="exportBtn" class="text-button" type="button" title="Download your saved constellations">Export ↓</button></div>
+          <div id="savedList" class="saved-list"><div class="empty-state"><span>☾</span><p>Your saved skies will<br>find a home here.</p></div></div>
+        </section>
+        <footer class="side-foot"><span>MADE OF STARDUST &amp; CURIOSITY</span><span>✦</span></footer>
+      </aside>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
